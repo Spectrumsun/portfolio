@@ -1,0 +1,403 @@
+body {
+  background-color: #df7683;
+  /* background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0); */
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 17pt;
+  font-weight: 300;
+  line-height: 1.65;
+  color: white;
+}
+
+.container {
+  width: 55em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.header {
+  color: white;
+  letter-spacing: -0.025em;
+  margin-top: 150px;
+}
+
+h1 {
+  font-size: 3.25em;
+  font-weight: 500;
+  padding: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.25em;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  background: white;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+  margin-top: 35px;
+}
+
+nav {
+  background: #f7f7f7;
+  color: #636363;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+  padding: 1em;
+  transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
+    border-top-right-radius 0.2s ease, padding 0.2s ease;
+}
+
+.fix-nav {
+  position: fixed;
+  top: 0;
+  padding: 0.5em 1em;
+  background-color: rgba(247, 247, 247, 0.95);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 10000;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  transition: margin 0.2s ease;
+}
+
+nav li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #6b6b6b;
+  padding: 0 1.25em;
+  border-radius: 8px;
+  height: 2.25em;
+  line-height: 2.25em;
+  transition: font-size 0.2s ease;
+}
+
+nav li a.active {
+  background-color: white;
+}
+
+nav li a:hover {
+  background-color: white;
+}
+
+.main-content {
+  color: black;
+  border-bottom: 0.6px solid #dddddd;
+  padding: 5em 5em 3em 5em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4em;
+}
+
+.content-text {
+  width: 50%;
+  text-align: justify;
+}
+
+h2 {
+  color: #636363;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.content-text h2:after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 3.25em;
+  border-radius: 2px;
+  background-color: #dddddd;
+  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+}
+
+.content-text p {
+  color: #636363;
+  font-size: 0.8em;
+}
+
+.content-text a {
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  color: #636363;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  line-height: 2.75em;
+  min-width: 9.25em;
+  cursor: pointer;
+}
+
+.image-container-main {
+  border: 5px solid #dddddd;
+  border-radius: 100%;
+  padding: 0.65em;
+  display: flex;
+}
+
+.image-container-main img {
+  border-radius: 100%;
+  width: 16em;
+  flex: 1;
+}
+
+.skill {
+  text-align: left;
+  width: 50%;
+}
+
+.progress-bar-container {
+  display: flex;
+  width: 100%;
+  height: 0.5em;
+  background-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 12px;
+  margin-bottom: 1em;
+  margin: 0.3em 0 0.5em 0;
+}
+
+.progress-bar {
+  border-radius: 12px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+  background-color: #efa8b0;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #efa8b0, #a89cc8, #8cc9f0);
+  width: 90%;
+  height: 0.5em;
+}
+
+.skill > div:nth-child(2) > div {
+  animation: first 3s normal forwards;
+}
+
+.skill > div:nth-child(4) > div {
+  animation: second 3s normal forwards;
+}
+
+.skill > div:nth-child(6) > div {
+  animation: third 3s normal forwards;
+}
+
+.skill > div:nth-child(8) > div {
+  animation: fourth 3s normal forwards;
+}
+
+.skill > div:nth-child(10) > div {
+  animation: five 3s normal forwards;
+}
+
+
+@keyframes first {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes second {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes third {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes fourth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+
+@keyframes five {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+.profess {
+  padding: 0;
+  margin: 0;
+}
+
+.progress-text {
+  font-size: 0.6em;
+  font-weight: 560;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.content-two {
+  border-bottom: 0.5px solid #dddddd;
+}
+
+.line {
+  color: black;
+  font-size: 2em;
+}
+
+.line:after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 3.25em;
+  border-radius: 2px;
+  background-color: #dddddd;
+  margin: 0 auto;
+  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+}
+
+.contact {
+  color: white;
+  width: 80%;
+  border-radius: 0.25em;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0em 5em 3em 5em;
+}
+
+.content-two p {
+  color: black;
+  font-size: 0.8em;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0em 5em 3em 5em;
+}
+
+.portfolio-item .card {
+  background-color: thistle;
+  flex: 0 33%;
+  height: 200px;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+.contact ul {
+  display: flex;
+  justify-content: center;
+}
+
+.contact li {
+  transition: margin 0.2s ease;
+  background-color: #efa8b0;
+  flex: 1;
+}
+
+.contact li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8em;
+  padding: 1.5em;
+  line-height: 2.25em;
+  transition: font-size 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact li:nth-child(2) {
+  background-color: #c79cc8;
+}
+
+.contact li:nth-child(3) {
+  background-color: #a89cc8;
+}
+
+.contact li:nth-child(4) {
+  background-color: #9bb2e1;
+}
+
+.contact li:nth-child(4) {
+  background-color: #8cc9f0;
+}
+
+.contact li i {
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.content-three {
+  color: black;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  padding: 3em;
+}
+
+footer h2 {
+  font-size: 1.1em;
+  color: white;
+}
+
+footer .details {
+  width: 35%;
+}
+
+footer p {
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.6em;
+}
+
+.end {
+  font-size: 0.5em;
+  margin-bottom: 10em;
+}
