@@ -380,7 +380,7 @@ footer {
   display: grid;
   grid-template-areas: "details message";
   grid-template-columns: 1fr 1fr;
-  padding: 5em 5em 3em 5em;
+  padding: 1em 5em 3em 5em;
   width: 70%;
   justify-items: end;
   margin: 0 auto;
@@ -459,6 +459,17 @@ footer p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  footer {
+    justify-items: start;
+    padding: 0;
+    font-size: 14pt;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "details"
+      "message";
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -475,17 +486,5 @@ footer p {
 
   .content-text p {
     font-size: 1em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  /* .container {
-    max-width: calc(100% - 2em);
-  } */
-}
-
-@media screen and (max-width: 360px) {
-  .container {
-    max-width: 100%;
   }
 }
