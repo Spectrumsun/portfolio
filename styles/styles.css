@@ -79,13 +79,10 @@ ul {
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
   text-align: center;
-  display: grid;
-  justify-items: center;
 }
 
 .nav-bar ul {
   display: grid;
-  width: 50%;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
@@ -420,6 +417,9 @@ footer p {
 }
 
 @media screen and (max-width: 900px) {
+  body {
+    font-size: 14pt;
+  }
   .main-content {
     grid-template-areas:
       "image"
@@ -441,6 +441,12 @@ footer p {
 
   .skill {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body {
+    font-size: 11pt;
   }
 }
 
