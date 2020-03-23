@@ -417,9 +417,9 @@ footer p {
 }
 
 @media screen and (max-width: 900px) {
-  body {
+  /* body {
     font-size: 14pt;
-  }
+  } */
   .main-content {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -444,16 +444,35 @@ footer p {
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 800px) {
+  .portfolio-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 550px) {
   body {
     font-size: 11pt;
+  }
+  .portfolio-item {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media screen and (max-width: 480px) {
-  .container {
+  /* .container {
     max-width: calc(100% - 2em);
-  }
+  } */
 }
 
 @media screen and (max-width: 360px) {
