@@ -1,26 +1,10 @@
 body {
   background-color: #df7683;
-  /* background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0); */
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 17pt;
   font-weight: 300;
   line-height: 1.65;
   color: white;
-}
-
-.container {
-  width: 55em;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.header {
-  color: white;
-  letter-spacing: -0.025em;
-  margin-top: 150px;
 }
 
 h1 {
@@ -29,6 +13,40 @@ h1 {
   padding: 0px;
   padding: 0;
   margin: 0;
+}
+
+h2 {
+  color: #636363;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-gap: 20px;
+  margin: 0 auto;
+  width: 50em;
+  max-width: 100%;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  color: white;
+  letter-spacing: -0.025em;
+  margin-top: 150px;
 }
 
 .header p {
@@ -40,44 +58,42 @@ h1 {
 }
 
 .main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "nav-bar"
+    "main-content"
+    "content-two"
+    "content-three";
   background: white;
   border-top-left-radius: 0.25em;
   border-top-right-radius: 0.25em;
-  margin-top: 35px;
 }
 
-nav {
+.nav-bar {
+  grid-area: nav-bar;
   background: #f7f7f7;
-  color: #636363;
   border-top-left-radius: 0.25em;
   border-top-right-radius: 0.25em;
   padding: 1em;
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
+  text-align: center;
+  display: grid;
+  justify-items: center;
 }
 
-.fix-nav {
-  position: fixed;
-  top: 0;
-  padding: 0.5em 1em;
-  background-color: rgba(247, 247, 247, 0.95);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  z-index: 10000;
+.nav-bar ul {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
+.nav-bar li {
   transition: margin 0.2s ease;
 }
 
-nav li a {
+.nav-bar a {
   display: inline-block;
   text-decoration: none;
   color: #6b6b6b;
@@ -88,38 +104,31 @@ nav li a {
   transition: font-size 0.2s ease;
 }
 
-nav li a.active {
+.nav-bar li a.active {
   background-color: white;
 }
 
-nav li a:hover {
+.nav-bar li a:hover {
   background-color: white;
 }
 
 .main-content {
+  grid-area: main-content;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-areas:
+    "text image"
+    "skill game";
+  grid-template-columns: 1fr auto;
+  align-items: center;
   color: black;
   border-bottom: 0.6px solid #dddddd;
-  padding: 5em 5em 3em 5em;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4em;
+  padding: 2em 5em 3em 5em;
 }
 
 .content-text {
-  width: 50%;
+  grid-area: text;
   text-align: justify;
-}
-
-h2 {
-  color: #636363;
-  font-size: 2em;
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: -0.025em;
 }
 
 .content-text h2:after {
@@ -150,31 +159,29 @@ h2 {
 }
 
 .image-container-main {
+  grid-area: image;
   border: 5px solid #dddddd;
   border-radius: 100%;
   padding: 0.65em;
-  display: flex;
+  display: grid;
+  padding: 0.5em;
 }
 
 .image-container-main img {
   border-radius: 100%;
-  width: 16em;
-  flex: 1;
+  width: 13em;
 }
 
 .skill {
-  text-align: left;
-  width: 50%;
+  grid-area: skill;
 }
 
 .progress-bar-container {
-  display: flex;
   width: 100%;
   height: 0.5em;
   background-color: rgba(255, 255, 255, 0.65);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
   border-radius: 12px;
-  margin-bottom: 1em;
   margin: 0.3em 0 0.5em 0;
 }
 
@@ -215,7 +222,6 @@ h2 {
   animation: five 3s normal forwards;
 }
 
-
 @keyframes first {
   0% {
     width: 0;
@@ -252,7 +258,6 @@ h2 {
   }
 }
 
-
 @keyframes five {
   0% {
     width: 0;
@@ -277,7 +282,10 @@ h2 {
 }
 
 .content-two {
+  grid-area: content-two;
   border-bottom: 0.5px solid #dddddd;
+  padding: 0em 5em 3em 5em;
+  text-align: center;
 }
 
 .line {
@@ -296,47 +304,46 @@ h2 {
   background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 }
 
-.contact {
-  color: white;
-  width: 80%;
-  border-radius: 0.25em;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0em 5em 3em 5em;
-}
-
 .content-two p {
   color: black;
   font-size: 0.8em;
 }
 
 .portfolio-item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  padding: 0em 5em 3em 5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-self: center;
 }
 
 .portfolio-item .card {
   background-color: thistle;
-  flex: 0 33%;
   height: 200px;
-  margin-bottom: 1%;
   text-align: center;
 }
 
+.content-three {
+  grid-area: content-three;
+  text-align: center;
+  color: black;
+  padding: 0em 5em 3em 5em;
+}
+
+.contact {
+  color: white;
+  border-radius: 0.25em;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .contact ul {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .contact li {
   transition: margin 0.2s ease;
   background-color: #efa8b0;
-  flex: 1;
 }
 
 .contact li a {
@@ -346,8 +353,7 @@ h2 {
   padding: 1.5em;
   line-height: 2.25em;
   transition: font-size 0.2s ease;
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 .contact li:nth-child(2) {
@@ -371,24 +377,28 @@ h2 {
   font-weight: 900;
 }
 
-.content-three {
-  color: black;
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-areas: "details message";
+  grid-template-columns: 1fr 1fr;
+  padding: 5em 5em 3em 5em;
+  width: 70%;
+  justify-items: end;
+  margin: 0 auto;
 }
 
-footer {
-  display: flex;
-  justify-content: space-around;
-  text-align: left;
-  padding: 3em;
+.details {
+  grid-area: details;
+}
+
+.message {
+  grid-area: message;
 }
 
 footer h2 {
   font-size: 1.1em;
   color: white;
-}
-
-footer .details {
-  width: 35%;
 }
 
 footer p {
@@ -400,4 +410,48 @@ footer p {
 .end {
   font-size: 0.5em;
   margin-bottom: 10em;
+  text-align: center;
+}
+
+@media screen and (max-width: 1149px) {
+  .image-container-main img {
+    width: 10em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-content {
+    grid-template-areas:
+      "image"
+      "text"
+      "skill";
+    justify-items: center;
+    align-items: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .image-container-main {
+    width: 40%;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .skill {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: calc(100% - 2em);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    max-width: 100%;
+  }
 }
