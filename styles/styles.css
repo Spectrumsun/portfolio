@@ -417,9 +417,6 @@ footer p {
 }
 
 @media screen and (max-width: 900px) {
-  /* body {
-    font-size: 14pt;
-  } */
   .main-content {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -428,6 +425,14 @@ footer p {
       "skill";
     justify-items: center;
     align-items: center;
+    padding: 2em 2em 4em 2em;
+  }
+  .content-two {
+    padding: 2em 2em 4em 2em;
+  }
+
+  .content-three {
+    padding: 2em 2em 4em 2em;
   }
 
   h3 {
@@ -453,7 +458,6 @@ footer p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media screen and (max-width: 550px) {
@@ -467,6 +471,11 @@ footer p {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .content-text p {
+    font-size: 1em;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
