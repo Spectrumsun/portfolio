@@ -421,6 +421,7 @@ footer p {
     font-size: 14pt;
   }
   .main-content {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "image"
       "text"
