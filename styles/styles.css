@@ -39,6 +39,7 @@ ul {
     "header"
     "main"
     "footer";
+  overflow-x: hidden;
 }
 
 .header {
@@ -475,7 +476,6 @@ footer p {
   .content-text p {
     font-size: 1em;
   }
-
 }
 
 @media screen and (max-width: 480px) {
