@@ -33,8 +33,8 @@ ul {
   display: grid;
   grid-gap: 20px;
   margin: 0 auto;
-  width: 50em;
-  max-width: 100%;
+  width: 55em;
+  max-width: calc(100% - 4em);
   grid-template-areas:
     "header"
     "main"
@@ -79,23 +79,36 @@ ul {
   padding: 1em;
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
-  text-align: center;
 }
 
 .nav-bar ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+}
+
+#navbar.sticky {
+  position: fixed;
+  top: 0;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  background-color: rgba(247, 247, 247, 0.95);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  /* width: 48em; */
+
 }
 
 .nav-bar li {
   transition: margin 0.2s ease;
 }
 
+
 .nav-bar a {
   display: inline-block;
   text-decoration: none;
   color: #6b6b6b;
-  padding: 0 1.25em;
+  padding: 0 1.20em;
   border-radius: 8px;
   height: 2.25em;
   line-height: 2.25em;
@@ -486,5 +499,8 @@ footer p {
 
   .content-text p {
     font-size: 1em;
+  }
+  .nav-bar {
+    display: none;
   }
 }
