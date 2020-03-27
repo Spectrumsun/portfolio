@@ -8,7 +8,8 @@ const fixNavbar = () => {
 
 const li = document.querySelectorAll(".nav-bar > ul > li");
 const addClassNav = e => {
-  document.querySelector(".active").classList.remove("active");
+  const current = document.querySelector(".active");
+  current.classList.remove("active");
   e.target.classList.add("active");
 };
 

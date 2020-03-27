@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #df7683;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -78,7 +82,6 @@ ul {
   padding: 1em;
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
-
 }
 
 .nav-bar ul {
@@ -96,9 +99,7 @@ ul {
   border-top-right-radius: 0;
   font-size: 0.9em;
   padding: 0.5em 1em;
-} 
-
-
+}
 
 .nav-bar li {
   transition: margin 0.2s ease;
@@ -424,20 +425,12 @@ footer p {
   text-align: center;
 }
 
-/* @media screen and (max-width: 1366px) {
-  #navbar.sticky {
-    width: 55em;
-  }
-} */
 
 @media screen and (max-width: 1149px) {
   .image-container-main img {
     width: 10em;
   }
 
-  /* #navbar.sticky {
-    width: 55em;
-  } */
 }
 
 @media screen and (max-width: 900px) {
@@ -450,6 +443,9 @@ footer p {
     justify-items: center;
     align-items: center;
     padding: 2em 2em 4em 2em;
+  }
+  .nav-bar a {
+    font-size: 0.8em;
   }
   .content-two {
     padding: 2em 2em 4em 2em;
