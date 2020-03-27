@@ -78,17 +78,19 @@ ul {
   padding: 1em;
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
-  position: sticky;
-  top: 0;
+
 }
 
 .nav-bar ul {
   display: grid;
   grid-template-columns: repeat(3, auto);
+  grid-gap: 20px;
   justify-content: center;
 }
 
-#navbar.sticky {
+.sticky {
+  position: sticky;
+  top: 0;
   background-color: rgba(247, 247, 247, 0.95);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -118,7 +120,7 @@ ul {
 }
 
 .nav-bar li a:hover {
-  background-color: white;
+  background-color: #f1f1f1ea;
 }
 
 .main-content {
