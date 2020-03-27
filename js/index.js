@@ -8,5 +8,5 @@ const sticky = navbar.offsetTop;
 const fixNavbar = () => {
   window.pageYOffset >= sticky
     ? navbar.classList.add("sticky")
-    : navbar.classList.remove("sticky");
+    : navbar.classList.remove("sticky")
 };

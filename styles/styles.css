@@ -39,7 +39,6 @@ ul {
     "header"
     "main"
     "footer";
-  overflow-x: hidden;
 }
 
 .header {
@@ -79,6 +78,8 @@ ul {
   padding: 1em;
   transition: background-color 0.2s ease, border-top-left-radius 0.2s ease,
     border-top-right-radius 0.2s ease, padding 0.2s ease;
+  position: sticky;
+  top: 0;
 }
 
 .nav-bar ul {
@@ -88,27 +89,24 @@ ul {
 }
 
 #navbar.sticky {
-  position: fixed;
-  top: 0;
-  padding: 0.5em 1em;
-  font-size: 0.9em;
   background-color: rgba(247, 247, 247, 0.95);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  /* width: 48em; */
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+} 
 
-}
+
 
 .nav-bar li {
   transition: margin 0.2s ease;
 }
 
-
 .nav-bar a {
   display: inline-block;
   text-decoration: none;
   color: #6b6b6b;
-  padding: 0 1.20em;
+  padding: 0 1.2em;
   border-radius: 8px;
   height: 2.25em;
   line-height: 2.25em;
@@ -424,10 +422,20 @@ footer p {
   text-align: center;
 }
 
+/* @media screen and (max-width: 1366px) {
+  #navbar.sticky {
+    width: 55em;
+  }
+} */
+
 @media screen and (max-width: 1149px) {
   .image-container-main img {
     width: 10em;
   }
+
+  /* #navbar.sticky {
+    width: 55em;
+  } */
 }
 
 @media screen and (max-width: 900px) {
