@@ -346,7 +346,6 @@ ul {
   background-color: thistle;
   height: 200px;
   text-align: center;
-
   display: grid;
   justify-items: center;
   align-items: center;
@@ -359,21 +358,38 @@ ul {
 }
 
 .inner-card {
-  display: none;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 16px;
+  display: grid;
+  opacity: 0;
+  transition: opacity 0.51s ease-out, padding 0.5s ease-out;
+}
+
+.inner-card:hover {
+  opacity: 10;
+  padding: 25px;
 }
 
 .inner-card div {
   display: grid;
   justify-items: center;
   align-items: center;
-
   border: 1px dashed #ffffff;
+  transition: padding 1s;
+}
+
+.inner-card div:hover {
+  padding: 15px;
 }
 
 .inner-card div h4 {
   text-transform: capitalize;
-  /* opacity: 0; */
-  transition: all .5s;
 }
 
 .inner-card div a {
@@ -388,26 +404,12 @@ ul {
   cursor: pointer;
   background-color: #ffffff;
   font-size: 0.6em;
-  transition: all .5s;
 }
 
 .inner-card a:hover {
   background-color: var(--pink);
   border: 1px solid var(--pink);
   color: var(--white);
-}
-
-.card:hover .inner-card {
-  display: block;
-  background-color: rgba(0, 0, 0, 0.767);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  padding: 25px;
-  display: grid;
-  transition: all .5s;
 }
 
 .content-three {
