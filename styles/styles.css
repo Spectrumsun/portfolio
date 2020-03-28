@@ -1,9 +1,22 @@
+:root {
+  --transparent: rgba(247, 247, 247, 0.95);
+  --pink: #df7683;
+  --purple: #a89cc8;
+  --pear: #8cc9f0;
+  --white: white;
+  --black: black;
+  --darkBlack: #636363;
+  --gray: #dddddd;
+  --lightGray: rgba(255, 255, 255, 0.65);
+  --lightWhite: rgba(0, 0, 0, 0.25);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #df7683;
+  background-color: var(--pink);
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 17pt;
   font-weight: 300;
@@ -20,11 +33,15 @@ h1 {
 }
 
 h2 {
-  color: #636363;
+  color: var(--darkBlack);
   font-size: 2em;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: -0.025em;
+}
+h4 {
+  padding: 0;
+  margin: 0;
 }
 
 ul {
@@ -48,7 +65,7 @@ ul {
 .header {
   grid-area: header;
   text-align: center;
-  color: white;
+  color: var(--white);
   letter-spacing: -0.025em;
   margin-top: 150px;
 }
@@ -56,7 +73,7 @@ ul {
 .header p {
   font-size: 1.25em;
   letter-spacing: -0.025em;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--lightGray);
   padding: 0;
   margin: 0;
 }
@@ -94,7 +111,7 @@ ul {
 .sticky {
   position: sticky;
   top: 0;
-  background-color: rgba(247, 247, 247, 0.95);
+  background-color: var(--transparent);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   font-size: 0.9em;
@@ -117,7 +134,7 @@ ul {
 }
 
 .nav-bar li a.active {
-  background-color: white;
+  background-color: var(--white);
 }
 
 .nav-bar li a:hover {
@@ -134,7 +151,7 @@ ul {
   grid-template-columns: 1fr auto;
   align-items: center;
   color: black;
-  border-bottom: 0.6px solid #dddddd;
+  border-bottom: 0.6px solid var(--gray);
   padding: 2em 5em 3em 5em;
 }
 
@@ -149,30 +166,23 @@ ul {
   height: 2px;
   width: 3.25em;
   border-radius: 2px;
-  background-color: #dddddd;
-  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+  background-color: var(--gray);
+  background-image: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple),
+    var(--pear)
+  );
 }
 
 .content-text p {
-  color: #636363;
+  color: var(--darkBlack);
   font-size: 0.8em;
-}
-
-.content-text a {
-  text-decoration: none;
-  padding: 0.5em 1.5em;
-  text-align: center;
-  color: #636363;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  line-height: 2.75em;
-  min-width: 9.25em;
-  cursor: pointer;
 }
 
 .image-container-main {
   grid-area: image;
-  border: 5px solid #dddddd;
+  border: 5px solid var(--gray);
   border-radius: 100%;
   padding: 0.65em;
   display: grid;
@@ -191,8 +201,8 @@ ul {
 .progress-bar-container {
   width: 100%;
   height: 0.5em;
-  background-color: rgba(255, 255, 255, 0.65);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  background-color: var(--lightGray);
+  box-shadow: 0 2px 5px var(--lightWhite) inset;
   border-radius: 12px;
   margin: 0.3em 0 0.5em 0;
 }
@@ -208,8 +218,8 @@ ul {
       rgba(0, 0, 0, 0.1) 66%,
       transparent 66%
     ),
-    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-    -webkit-linear-gradient(left, #efa8b0, #a89cc8, #8cc9f0);
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), var(--lightWhite)),
+    -webkit-linear-gradient(left, var(--pink), var(--purple), var(--pear));
   width: 90%;
   height: 0.5em;
 }
@@ -295,13 +305,13 @@ ul {
 
 .content-two {
   grid-area: content-two;
-  border-bottom: 0.5px solid #dddddd;
+  border-bottom: 0.5px solid var(--gray);
   padding: 0em 5em 3em 5em;
   text-align: center;
 }
 
 .line {
-  color: black;
+  color: var(--black);
   font-size: 2em;
 }
 
@@ -311,38 +321,104 @@ ul {
   height: 2px;
   width: 3.25em;
   border-radius: 2px;
-  background-color: #dddddd;
+  background-color: var(--gray);
   margin: 0 auto;
-  background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+  background-image: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple),
+    var(--pear)
+  );
 }
 
 .content-two p {
-  color: black;
+  color: var(--black);
   font-size: 0.8em;
 }
 
 .portfolio-item {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  justify-self: center;
+  grid-gap: 10px;
 }
 
 .portfolio-item .card {
   background-color: thistle;
   height: 200px;
   text-align: center;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.portfolio-item .card:nth-child(1) {
+  background-color: var(--pink);
+  text-align: center;
+}
+
+.inner-card {
+  display: none;
+}
+
+.inner-card div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  border: 1px dashed #ffffff;
+}
+
+.inner-card div h4 {
+  text-transform: capitalize;
+  /* opacity: 0; */
+  transition: all .5s;
+}
+
+.inner-card div a {
+  text-decoration: none;
+  padding: 0.1em 0.1em;
+  text-align: center;
+  color: var(--darkBlack);
+  border: 1px solid var(--gray);
+  border-radius: 19px;
+  line-height: 2.75em;
+  min-width: 9.25em;
+  cursor: pointer;
+  background-color: #ffffff;
+  font-size: 0.6em;
+  transition: all .5s;
+}
+
+.inner-card a:hover {
+  background-color: var(--pink);
+  border: 1px solid var(--pink);
+  color: var(--white);
+}
+
+.card:hover .inner-card {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 25px;
+  display: grid;
+  transition: all .5s;
 }
 
 .content-three {
   grid-area: content-three;
   text-align: center;
-  color: black;
+  color: var(--black);
   padding: 0em 5em 3em 5em;
 }
 
 .contact {
-  color: white;
+  color: var(--white);
   border-radius: 0.25em;
   text-align: center;
   margin: 0 auto;
@@ -355,12 +431,12 @@ ul {
 
 .contact li {
   transition: margin 0.2s ease;
-  background-color: #efa8b0;
+  background-color: var(--pink);
 }
 
 .contact li a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
   font-size: 0.8em;
   padding: 1.5em;
   line-height: 2.25em;
@@ -373,7 +449,7 @@ ul {
 }
 
 .contact li:nth-child(3) {
-  background-color: #a89cc8;
+  background-color: var(--purple);
 }
 
 .contact li:nth-child(4) {
@@ -381,7 +457,7 @@ ul {
 }
 
 .contact li:nth-child(4) {
-  background-color: #8cc9f0;
+  background-color: var(--pear);
 }
 
 .contact li i {
@@ -410,12 +486,12 @@ footer {
 
 footer h2 {
   font-size: 1.1em;
-  color: white;
+  color: var(--white);
 }
 
 footer p {
   text-align: justify;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--lightGray);
   font-size: 0.6em;
 }
 
@@ -425,12 +501,10 @@ footer p {
   text-align: center;
 }
 
-
 @media screen and (max-width: 1149px) {
   .image-container-main img {
     width: 10em;
   }
-
 }
 
 @media screen and (max-width: 900px) {
