@@ -352,8 +352,22 @@ ul {
   position: relative;
 }
 
+.card img {
+  width: 50%;
+}
+
 .portfolio-item .card:nth-child(1) {
   background-color: var(--pink);
+  text-align: center;
+}
+
+.portfolio-item .card:nth-child(2) {
+  background-color: var(--purple);
+  text-align: center;
+}
+
+.portfolio-item .card:nth-child(3) {
+  background-color: var(--pear);
   text-align: center;
 }
 
