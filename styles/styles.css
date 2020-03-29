@@ -86,7 +86,7 @@ ul {
     "main-content"
     "content-two"
     "content-three";
-  background: white;
+  background: var(--white);
   border-top-left-radius: 0.25em;
   border-top-right-radius: 0.25em;
 }
@@ -406,6 +406,20 @@ ul {
   text-transform: capitalize;
 }
 
+/* .button {
+  text-decoration: none;
+  padding: 0.1em 0.1em;
+  text-align: center;
+  color: var(--darkBlack);
+  border: 1px solid var(--gray);
+  border-radius: 19px;
+  line-height: 2.75em;
+  min-width: 9.25em;
+  cursor: pointer;
+  background-color: #ffffff;
+  font-size: 0.6em;
+} */
+
 .inner-card div a {
   text-decoration: none;
   padding: 0.1em 0.1em;
@@ -507,8 +521,12 @@ ul {
 }
 
 .modal-window:target {
+  justify-content: center;
   opacity: 1;
   pointer-events: auto;
+  display: grid;
+  align-items: center;
+  grid-auto-columns: 1fr;
 }
 
 modal-window > div {
@@ -543,6 +561,68 @@ modal-window > div {
 .modal-window h1 {
   font-size: 150%;
   margin: 0 0 15px;
+}
+
+.modal-content {
+  background: white;
+  margin: 0 auto;
+  width: 25%;
+  color: black;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.modal-content form {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  color: #000;
+}
+
+.modal-content input {
+  height: 40px;
+  padding: 5px 20px;
+  outline: 1px solid transparent;
+  border: 1px solid #000000;
+}
+
+.modal-content textarea {
+  border: 1px solid #000000;
+  resize: none;
+  outline: 1px solid transparent;
+  padding: 5px 20px;
+}
+
+.modal-content buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+
+}
+
+.modal-content .buttons a {
+  text-decoration: none;
+  padding: 0.3em 1.2em;
+  text-align: center;
+  color: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 19px;
+  line-height: 2.75em;
+  min-width: 9.25em;
+  cursor: pointer;
+  background-color: var(--purple);
+  font-size: 0.9em;
+}
+
+#open-modal > div > div > a:nth-child(1):hover {
+  background-color: var(--pear);
+  color: var(--white);
+}
+
+#open-modal > div > div > a:nth-child(2):hover {
+  background-color: var(--pink);
+  color: var(--white);
 }
 
 footer {
