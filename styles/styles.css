@@ -517,50 +517,16 @@ ul {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
-  overflow: auto;
 }
 
 .modal-window:target {
-  justify-content: center;
-  opacity: 1;
-  pointer-events: auto;
   display: grid;
+  justify-content: center;
   align-items: center;
-  grid-auto-columns: 1fr;
-}
-
-modal-window > div {
-  width: 400px;
-  position: relative;
-  margin: 10% auto;
-  padding: 2rem;
-  background: #fff;
-  color: #444;
-}
-
-.modal-window header {
-  font-weight: bold;
-}
-
-.modal-close {
-  color: #aaa;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
-}
-
-.modal-close:hover {
-  color: #000;
-}
-
-.modal-window h1 {
-  font-size: 150%;
-  margin: 0 0 15px;
+  overflow: hidden;
+  height: 100vh;
+  opacity: 2;
+  pointer-events: auto;
 }
 
 .modal-content {
@@ -569,7 +535,8 @@ modal-window > div {
   color: black;
   padding: 20px;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
   justify-items: center;
 }
 
@@ -581,10 +548,6 @@ modal-window > div {
   align-items: center;
 }
 
-.modal-content h3 {
-  position: relative;
-}
-
 .small-logo {
   width: 20px;
   height: 20px;
@@ -594,7 +557,7 @@ modal-window > div {
 
 .modal-content form {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 5, 1fr;
   grid-gap: 10px;
   color: #000;
 }
@@ -613,15 +576,15 @@ modal-window > div {
   padding: 5px 20px;
 }
 
-.modal-content buttons {
+.modal-content .buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-gap: 25px;
 }
 
 .modal-content .buttons a {
   text-decoration: none;
-  padding: 0.3em 1.2em;
+  padding: 1px;
   text-align: center;
   color: var(--white);
   border: 1px solid var(--gray);
@@ -630,7 +593,7 @@ modal-window > div {
   min-width: 9.25em;
   cursor: pointer;
   background-color: var(--purple);
-  font-size: 0.9em;
+  font-size: 0.5em;
 }
 
 #open-modal > div > div > a:nth-child(1):hover {
