@@ -406,19 +406,6 @@ ul {
   text-transform: capitalize;
 }
 
-/* .button {
-  text-decoration: none;
-  padding: 0.1em 0.1em;
-  text-align: center;
-  color: var(--darkBlack);
-  border: 1px solid var(--gray);
-  border-radius: 19px;
-  line-height: 2.75em;
-  min-width: 9.25em;
-  cursor: pointer;
-  background-color: #ffffff;
-  font-size: 0.6em;
-} */
 
 .inner-card div a {
   text-decoration: none;
@@ -534,10 +521,12 @@ ul {
   margin: 0 auto;
   color: black;
   padding: 20px;
-  display: grid;
   grid-template-rows: auto 1fr auto;
   grid-gap: 10px;
   justify-items: center;
+}
+form {
+  margin-bottom: 20px;;
 }
 
 .title {
