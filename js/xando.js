@@ -7,7 +7,7 @@ const xAndO = document.querySelectorAll(".box");
 const currentTheme = localStorage.getItem("theme");
 const gameMode = document.querySelector(".game_status");
 const gameWinnerElement = document.querySelector(".game_winner");
-const reset = document.querySelector('.reset')
+const reset = document.querySelector(".reset");
 
 document.documentElement.setAttribute("data-theme", currentTheme);
 currentTheme === "dark"
@@ -26,63 +26,6 @@ const switchTheme = e => {
   }
 };
 
-let gameActive = true;
-
-const random = position => {
-  const roll = Math.round(Math.random() * (9 - 1) + 1);
-  return roll == position ? random(position) : roll;
-};
-
-const gameElement = (position, shape) =>
-  `<div class=${shape} id=~${position}></div>`;
-
-let gameStatus = [];
-
-const addGameItem = e => {
-  const { id } = e.target;
-  // const checkEmpty = gameStatus.filter(empty => empty == undefined);
-  if (gameActive) {
-    if (gameStatus[id] === undefined) {
-      gameMode.innerHTML = "Game started";
-      updateBox(id, "circle");
-      console.log(gameStatus)
-      if (gameStatus.length <= 8) {
-        const computerId = computerPlay(id);
-        setTimeout(() => {
-          updateBox(computerId, "x");
-        }, 300);
-      }
-      // handleResultValidation();
-    }
-  }
-};
-
-const computerPlay = position => {
-  const randomNumber = random(position);
-  if (gameStatus[randomNumber] !== undefined) {
-    return computerPlay(position);
-  }
-  return randomNumber;
-};
-
-const updateBox = (id, shape) => {
-  const findElement = document.getElementById(id);
-  gameStatus[id] = shape;
-  findElement.innerHTML = gameElement(id, shape);
-  findElement.setAttribute("data-status", `${shape}`);
-};
-
-const resetGame = e => {
-  gameActive = true;
-  gameStatus = [];
-  xAndO.forEach(innerBox => {
-    innerBox.innerHTML = "";
-    innerBox.setAttribute("data-status", "");
-  });
-  gameMode.innerHTML = "";
-  gameWinnerElement.innerHTML = "";
-};
-
 const winningMatch = [
   [0, 1, 2],
   [3, 4, 5],
@@ -94,8 +37,21 @@ const winningMatch = [
   [2, 4, 6]
 ];
 
-function handleResultValidation() {
-  let roundWon = false;
+let gameActive = true;
+let roundWon = false;
+
+const random = position => {
+  const roll = Math.round(Math.random() * (9 - 1) + 1);
+  return roll == position ? random(position) : roll;
+};
+
+const gameElement = (position, shape) =>
+  `<div class=${shape} id=~${position}></div>`;
+
+let gameStatus = ["", "", "", "", "", "", "", "", ""];
+
+const handleResultValidation = () => {
+  let winner;
   for (let i = 0; i <= 7; i++) {
     const winCondition = winningMatch[i];
     let a = gameStatus[winCondition[0]];
@@ -109,12 +65,13 @@ function handleResultValidation() {
     if (a === b && b === c) {
       roundWon = true;
       gameActive = false;
+      winner = [a, b, c];
       break;
     }
   }
 
   if (roundWon) {
-    gameWinnerElement.innerHTML = "You won the game";
+    gameWinnerElement.innerHTML = `${winner[0]} won the game`;
     gameMode.innerHTML = "Game Ended";
     gameActive = false;
     return;
@@ -122,12 +79,56 @@ function handleResultValidation() {
 
   let roundDraw = !gameStatus.includes("");
   if (roundDraw) {
-    gameWinnerElement.innerHTML = "draw";
+    gameWinnerElement.innerHTML = "Draw";
     gameMode.innerHTML = "Game Ended";
     gameActive = false;
     return;
   }
-}
+};
+
+const addGameItem = e => {
+  const { id } = e.target;
+  const checkEmpty = gameStatus.filter(empty => empty == "");
+  console.log(checkEmpty, 'kkk')
+  if (gameActive) {
+    if (gameStatus[id] === "") {
+      gameMode.innerHTML = "Game started";
+      updateBox(id, "O");
+    }
+    if (checkEmpty.length !== 1) {
+      const computerId = computerPlay(id);
+      updateBox(computerId, "X");
+    }
+  }
+  handleResultValidation();
+};
+
+const computerPlay = position => {
+  const randomNumber = random(position);
+  if (gameStatus[randomNumber] !== "") {
+    return computerPlay(position);
+  }
+  return randomNumber;
+};
+
+const updateBox = (id, shape) => {
+  const findElement = document.getElementById(id);
+  gameStatus[id] = shape;
+  findElement.innerHTML = gameElement(id, shape);
+  findElement.setAttribute("data-status", `${shape}`);
+  console.log(gameStatus, "gameStatus");
+};
+
+const resetGame = e => {
+  gameActive = true;
+  gameStatus = ["", "", "", "", "", "", "", "", ""];
+  xAndO.forEach(innerBox => {
+    innerBox.innerHTML = "";
+    innerBox.setAttribute("data-status", "");
+  });
+  gameMode.innerHTML = "";
+  gameWinnerElement.innerHTML = "";
+};
 
 toggleSwitch.addEventListener("change", switchTheme, false);
 reset.addEventListener("click", resetGame);
