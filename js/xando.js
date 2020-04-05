@@ -38,12 +38,6 @@ const winningMatch = [
 ];
 
 let gameActive = true;
-let roundWon = false;
-
-const random = position => {
-  const roll = Math.round(Math.random() * (9 - 1) + 1);
-  return roll == position ? random(position) : roll;
-};
 
 const gameElement = (position, shape) =>
   `<div class=${shape} id=~${position}></div>`;
@@ -51,6 +45,7 @@ const gameElement = (position, shape) =>
 let gameStatus = ["", "", "", "", "", "", "", "", ""];
 
 const handleResultValidation = () => {
+  let roundWon = false;
   let winner;
   for (let i = 0; i <= 7; i++) {
     const winCondition = winningMatch[i];
@@ -89,7 +84,6 @@ const handleResultValidation = () => {
 const addGameItem = e => {
   const { id } = e.target;
   const checkEmpty = gameStatus.filter(empty => empty == "");
-  console.log(checkEmpty, 'kkk')
   if (gameActive) {
     if (gameStatus[id] === "") {
       gameMode.innerHTML = "Game started";
@@ -101,6 +95,11 @@ const addGameItem = e => {
     }
   }
   handleResultValidation();
+};
+
+const random = position => {
+  const roll = Math.round(Math.random() * (9 - 1) + 1);
+  return roll == position ? random(position) : roll;
 };
 
 const computerPlay = position => {
