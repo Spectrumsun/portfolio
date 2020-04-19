@@ -1,0 +1,75 @@
+body {
+  background: #66545e;
+}
+
+.main_container {
+  display: grid;
+  width: 50%;
+  margin: 0 auto;
+  grid-template-rows: auto auto 1fr;
+  grid-gap: 20px;
+  text-align: center;
+}
+
+button.start {
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: white;
+  border: 2px solid #754d02;
+  border-radius: 0.75em;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  width: 10%;
+  margin: 0 auto;
+}
+
+button.start:hover {
+  background: black;
+  color: white;
+  transform: translate(0, 0.25em);
+  -webkit-transform: translate(0, 0.25em);
+}
+
+.game_screen {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+}
+
+.grass {
+  position: relative;
+  overflow: hidden;
+}
+
+.grass:after {
+  display: block;
+  background: url("../assets/grass.svg") bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+
+.grass:hover {
+  cursor: url("../assets/baton.svg") 10 3, auto;
+}
+
+.sheep {
+  position: absolute;
+  top: -3px;
+  right: 13px;
+  width: 100%;
+  height: 80%;
+  transition: all 0.4s;
+}
+
+.grass.up .mole {
+  top: 0;
+}
