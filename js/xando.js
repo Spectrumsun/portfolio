@@ -129,6 +129,8 @@ const resetGame = e => {
   gameWinnerElement.innerHTML = "";
 };
 
+
+
 toggleSwitch.addEventListener("change", switchTheme, false);
 reset.addEventListener("click", resetGame);
 xAndO.forEach(box => box.addEventListener("click", addGameItem));
